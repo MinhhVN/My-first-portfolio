@@ -290,8 +290,6 @@ h2 {
 }
 
 #table-item{
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 auto;
     border-spacing: 20px;
 }
@@ -340,3 +338,4 @@ h2 {
     padding: 210px 0; 
     background-color: #edecdf; 
 }
+
