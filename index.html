@@ -33,7 +33,7 @@
 
    
     <main id="main">
-        <!-- FIX: Removed 'reveal-on-scroll' from section, added to h1/p -->
+        
         <section class="introduction">
             <h1 class="reveal-on-scroll">I'm _nemol.</h1>
             <p class="reveal-on-scroll">an editor & graphic designer</p>
@@ -97,11 +97,11 @@
         <p><b>Coursera - CSS3</b></p>
     </footer>
 
-    <!-- Page Transition & Scroll Observer Script -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. PAGE TRANSITION LOGIC
+            
             const links = document.querySelectorAll('a.nav-bar-edit');
             
             links.forEach(link => {
@@ -118,7 +118,7 @@
                 });
             });
 
-            // 2. SCROLL REVEAL LOGIC
+            
             const observerOptions = {
                 threshold: 0.15 
             };
@@ -137,4 +137,5 @@
         });
     </script>
 </body>
+
 </html>
