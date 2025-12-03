@@ -4,25 +4,23 @@ body {
     font-family: 'Montserrat', sans-serif; 
     font-size: 16px;
     
-    /* Page Load Fade In Animation */
-    opacity: 0; /* Start hidden */
-    animation: fadeIn 0.8s ease-in-out forwards; /* Fade in on load */
+    
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-in-out forwards; 
 }
 
-/* Default smooth scroll */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* --- ANIMATIONS --- */
 
-/* 1. Page Load Fade In */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* 2. Page Exit Fade Out (Applied by JS) */
+
 .fade-out {
     animation: fadeOut 0.5s ease-in-out forwards;
 }
@@ -32,22 +30,21 @@ html {
     to { opacity: 0; }
 }
 
-/* 3. SCROLL REVEAL ANIMATION (New) */
-/* Initial state: hidden and pushed down */
+
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(40px); /* Start 40px lower */
-    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth "settle" effect */
+    transform: translateY(40px); 
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform, opacity;
 }
 
-/* Active state: Visible and in place (Applied by JS) */
+
 .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- EXISTING STYLES --- */
+
 
 .skip-link {
     position: absolute;
@@ -134,7 +131,7 @@ ul {
     color: #903d45;
     font-size: 120%;
     cursor: pointer;
-    transition: color 0.3s ease; /* Smooth color change on hover */
+    transition: color 0.3s ease; 
 }
 
 .nav-bar-edit:hover {
@@ -245,7 +242,7 @@ h2 {
     color: #753f40;
 }
 
-/* Updated centering logic for content */
+
 .Can-do-content p, #ability p {
     max-width: 400px;
     text-align: left;
@@ -280,7 +277,7 @@ h2 {
     border-radius: 20px;
     margin-top: 30px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth button hover */
+    transition: all 0.3s ease; 
 }
 #contact-me a {
     text-decoration: none;
@@ -291,7 +288,7 @@ h2 {
 #contact-me:hover {
     background-color: #f66d6d;
     border-color: #f66d6d;
-    transform: scale(1.05); /* Slight pop on hover */
+    transform: scale(1.05);
 }
 #contact-me:hover a {
     color: white;
@@ -393,9 +390,7 @@ h2 {
 }
 
 
-/* =======================================================
-   ASSIGNMENT REQUIREMENTS 
-   ======================================================= */
+
 
 .assignment-grid {
     display: grid;
@@ -428,7 +423,7 @@ h2 {
 }
 
 
-/* Tablet View (Trigger at 772px) */
+
 @media screen and (min-width: 772px) {
     .assignment-grid {
         grid-template-columns: 1fr 1fr; 
@@ -443,7 +438,7 @@ h2 {
     }
 }
 
-/* Large Screen View (Trigger at 992px) */
+
 @media screen and (min-width: 992px) {
     .assignment-grid figure:nth-child(3n) {
         grid-column: span 2;
@@ -454,20 +449,20 @@ h2 {
     }
 }
 
-/* Prefers Reduced Motion */
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto; 
     }
     
-    /* Disable animations if user prefers reduced motion */
+    
     body, #intro-content img, #Work-content img, #Notes-content img, .item img, #Can-do img {
         animation: none;
-        opacity: 1; /* Ensure visible */
+        opacity: 1;
     }
 }
 
-/* Dark Color Scheme */
+
 @media (prefers-color-scheme: dark) {
     .assignment-grid figure {
         background-color: #2c2c2c; 
@@ -480,9 +475,7 @@ h2 {
     }
 }
 
-/* =======================================================
-   RESPONSIVE VIDEO & TABLE FIXES 
-   ======================================================= */
+
 
 iframe {
     max-width: 100%; 
@@ -514,4 +507,5 @@ iframe {
     #table-item td[align="right"] {
         text-align: center;
     }
+
 }
