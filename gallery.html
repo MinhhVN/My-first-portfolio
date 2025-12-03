@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - _nemol</title>
+    
+    <link rel="stylesheet" href="Stryles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #gallery-area {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #image {
+            line-height: 450px;
+            width: 600px;
+            height: 450px;
+            border: 3px solid #753f40; 
+            background-color: #edecdf; 
+            background-image: url('https://images.steamusercontent.com/ugc/29933515303077305/26B6BC96F71D694FC8D12B952B66B82A23A29439/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); 
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+            color: #753f40; 
+            margin: 0 auto;
+            margin-bottom: 40px;
+            font-size: 150%;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 10px; 
+            transition: all 0.5s ease;
+            
+        }
+
+        .preview-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .preview {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10%; 
+            border: 4px solid transparent;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preview:hover {
+            opacity: 1;
+            border-color: #d72323; 
+            transform: translateY(-5px);
+        }
+
+        @media only screen and (max-width: 650px) {
+            #image {
+                width: 90%;
+                height: 300px;
+                line-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="#gallery-area" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <nav id="nav">
+            <img class="img" src="https://i.pinimg.com/originals/13/0d/75/130d755e5a4c0df8f2344489c916eb20.gif" alt="My beloved couple">
+            <ul>
+                <li><a class="nav-bar-edit" href="index.html" style="text-decoration: none;">About</a></li>
+                <li><a class="nav-bar-edit" href="Work.html" style="text-decoration: none">Work</a></li>
+                <li><a class="nav-bar-edit" href="Notes.html" style="text-decoration: none">Notes</a></li>
+                <li><a class="nav-bar-edit" href="gallery.html" style="text-decoration: none; color:#532a2a;">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <main id="main">
+        <section class="introduction">
+            <h1>Gallery.</h1>
+            <p>I love cars ><</p>
+        </section>
+
+        <section id="intro-content">
+            <h1>Cars.</h1>
+            <p>"More than just a machine of steel and glass, a car is the ultimate vessel of freedom, turning the blur of the asphalt into a rhythm that syncs perfectly with your heartbeat. It promises that no matter how heavy the world feels, a new horizon is always just a gear shift away."
+            </p>
+        </section>
+
+        <section id="gallery-area">
+            
+            <div id="image">
+                Hover over an image below.
+            </div>
+
+            <div class="preview-container">
+                <img class="preview" 
+                     alt="Toyota GR Supra MkV Final Edition (2026)" 
+                     src="images/Toyota-GR_Supra_MkV_Final_Edition-2026-HD.jpg" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="undo()">
+                
+                <img class="preview" 
+                     alt="Hyundai N Vision 74 Concept (2022)" 
+                     src="images/Hyundai-N_Vision_74_Concept-2022.jpg" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="undo()">
+                
+                <img class="preview" 
+                     alt="Ferrari F40 (1987)" 
+                     src="images/Ferrari-F40-1987.jpg" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="undo()">
+
+                <img class="preview" 
+                     alt="Porsche 911 Turbo (1993)" 
+                     src="images/Porsche-911_Turbo-1993.jpg" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="undo()">
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="Help">
+            <h1>I can help.</h1>
+            <h2>I’m currently available for freelance work.</h2>
+            <h3>If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</h3>
+            <div>
+                <button id="contact-me">
+                    <a href="mailto:tonyn0526@gmail.com">✉️ Contact Me</a>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 _nemol a.k.a Nguyen Tan Minh. All rights reserved.</p>
+        <p><b>Coursera - Interactive Gallery</b></p>
+    </footer>
+
+    <script>
+        function upDate(previewPic) {
+            console.log("Event Triggered");
+            console.log("Alt: " + previewPic.alt);
+            console.log("Source: " + previewPic.src);
+
+            let imageDiv = document.getElementById("image");
+
+            imageDiv.innerHTML = previewPic.alt;
+
+            imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+            
+            imageDiv.style.color = "#FFFFFF";
+        
+        }
+
+        function undo() {
+            console.log("Undo Triggered");
+
+            let imageDiv = document.getElementById("image");
+
+            imageDiv.style.backgroundImage = "url('')";
+
+            imageDiv.innerHTML = "Hover over an image below.";
+
+            imageDiv.style.color = "#753f40";
+            imageDiv.style.textShadow = "none";
+        }
+    </script>
+
+</body>
+</html>
+                
